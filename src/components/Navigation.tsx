@@ -71,6 +71,9 @@ const Navigation = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-white hover:text-accenture-purple transition-colors">
+              Home
+            </Link>
             <div className="relative group">
               <button
                 onClick={() => {
@@ -98,6 +101,9 @@ const Navigation = () => {
             </Link>
             <Link to="/careers" className="text-white hover:text-accenture-purple transition-colors">
               Careers
+            </Link>
+            <Link to="/contact" className="text-white hover:text-accenture-purple transition-colors">
+              Contact
             </Link>
           </div>
 
