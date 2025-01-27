@@ -1,5 +1,5 @@
 import React from "react";
-import { Book, TrendingUp, Scale } from "lucide-react";
+import { Book, TrendingUp, Scale, Heart, Users, Globe } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +7,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Navigation from "@/components/Navigation";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Careers = () => {
   const testimonials = [
@@ -28,26 +35,44 @@ const Careers = () => {
       quote: "In Accenture, I've enjoyed sharing and learning everyday from leaders and teammates across the world.",
       image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
     },
+    {
+      name: "John Smith",
+      role: "Senior Developer",
+      quote: "The innovation and technology at Accenture keeps me excited about coming to work every day.",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    },
   ];
 
   const benefits = [
     {
+      icon: <Heart className="w-12 h-12 text-accenture-purple" />,
+      title: "Inclusive Culture",
+      description: "Join a workplace that celebrates diversity and fosters belonging.",
+    },
+    {
       icon: <Book className="w-12 h-12 text-accenture-purple" />,
       title: "Learning & Development",
-      description:
-        "We offer a wide array of programs to help you expand your skills and supercharge your career.",
+      description: "Expand your skills and supercharge your career with our learning programs.",
     },
     {
       icon: <TrendingUp className="w-12 h-12 text-accenture-purple" />,
-      title: "Career Track",
-      description:
-        "Discover your passion—the driving force that makes you smile and innovate, create, and make a difference every day",
+      title: "Career Growth",
+      description: "Clear paths for advancement and opportunities to lead innovative projects.",
     },
     {
       icon: <Scale className="w-12 h-12 text-accenture-purple" />,
       title: "Work Life Balance",
-      description:
-        "Accenture is all about open doors, open minds, and open opportunities. We ensure a flexible work environment that respects your work-life balance and your growth.",
+      description: "Flexible work arrangements that respect your personal time.",
+    },
+    {
+      icon: <Users className="w-12 h-12 text-accenture-purple" />,
+      title: "Collaborative Teams",
+      description: "Work with talented professionals from diverse backgrounds.",
+    },
+    {
+      icon: <Globe className="w-12 h-12 text-accenture-purple" />,
+      title: "Global Impact",
+      description: "Make a difference on projects that shape industries worldwide.",
     },
   ];
 
@@ -91,7 +116,7 @@ const Careers = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Hero Section */}
+      {/* Hero Section with Why Join Us */}
       <div className="bg-accenture-dark text-white py-20 mt-20">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl font-bold mb-6">Join Our Team</h1>
@@ -102,53 +127,18 @@ const Careers = () => {
         </div>
       </div>
 
-      {/* Employee Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4 text-accenture-dark">
-            Employee Testimonials
-          </h2>
-          <p className="text-xl mb-12 text-gray-600">
-            Discover the Accenture journey through the eyes of our exceptional
-            team.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-32 h-32 mb-6 rounded-full overflow-hidden">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-lg mb-4 text-gray-700">"{testimonial.quote}"</p>
-                  <h3 className="font-bold text-xl mb-1">{testimonial.name}</h3>
-                  <p className="text-gray-600">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Workplace Benefits */}
+      {/* Benefits Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-4 text-accenture-dark">
-            The Accenture Advantage: Your Workplace Benefits
+            The Accenture Advantage
           </h2>
           <p className="text-xl mb-12 text-gray-600">
-            We are interested in, and want to support, the professional and
-            personal you.
+            Discover the benefits of building your career with us.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex flex-col items-center text-center">
+              <div key={index} className="p-6 bg-white shadow-lg">
                 <div className="mb-6">{benefit.icon}</div>
                 <h3 className="text-2xl font-bold mb-4">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
@@ -158,8 +148,44 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Open Positions */}
+      {/* Employee Testimonials */}
       <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-4 text-accenture-dark">
+            Employee Testimonials
+          </h2>
+          <p className="text-xl mb-12 text-gray-600">
+            Discover the Accenture journey through the eyes of our exceptional team.
+          </p>
+          <Carousel className="w-full">
+            <CarouselContent className="-ml-4">
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/4">
+                  <div className="bg-white p-8 rounded shadow-lg h-full">
+                    <div className="flex flex-col items-center text-center">
+                      <div className="w-32 h-32 mb-6 rounded-full overflow-hidden">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <p className="text-lg mb-4 text-gray-700">"{testimonial.quote}"</p>
+                      <h3 className="font-bold text-xl mb-1">{testimonial.name}</h3>
+                      <p className="text-gray-600">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
+
+      {/* Open Positions */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-4 text-accenture-dark">
             Open Positions
@@ -172,7 +198,7 @@ const Careers = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-white rounded-lg"
+                className="bg-white shadow-lg"
               >
                 <AccordionTrigger className="px-6 py-4 hover:no-underline">
                   <div className="flex flex-col items-start text-left">
