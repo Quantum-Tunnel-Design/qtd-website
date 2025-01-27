@@ -14,6 +14,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Footer from "@/components/Footer";
 
 const Careers = () => {
   const testimonials = [
@@ -234,6 +235,7 @@ const Careers = () => {
           </Accordion>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

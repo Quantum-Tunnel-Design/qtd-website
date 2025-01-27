@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Brain, Globe, Users, Lightbulb, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const WhatWeThink = () => {
   const offerings = [
@@ -230,6 +231,8 @@ const WhatWeThink = () => {
           <Button className="bg-accenture-purple hover:bg-accenture-purple/90 rounded-none">Contact Us</Button>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

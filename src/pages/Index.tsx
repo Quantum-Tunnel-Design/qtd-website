@@ -5,6 +5,7 @@ import Challenges from "@/components/Challenges";
 import Services from "@/components/Services";
 import Value from "@/components/Value";
 import Awards from "@/components/Awards";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Services />
       <Value />
       <Awards />
+      <Footer />
     </div>
   );
 };

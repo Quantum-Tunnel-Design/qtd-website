@@ -3,12 +3,12 @@ import { ArrowRight, Linkedin, Twitter, Facebook } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import Footer from "@/components/Footer";
 
 const WhoWeAre = () => {
   return (
     <div className="min-h-screen bg-accenture-dark text-white">
       <Navigation />
-      
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
@@ -139,6 +139,7 @@ const WhoWeAre = () => {
           </a>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
