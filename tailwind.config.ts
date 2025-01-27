@@ -14,6 +14,7 @@ export default {
     },
     extend: {
       colors: {
+        border: "hsl(var(--border))",
         accenture: {
           purple: "#9b87f5",
           dark: "#1A1F2C",

@@ -9,7 +9,7 @@ const Hero = () => {
             TOGETHER WE
             <br />
             REIN
-            <span className="text-accenture-purple">></span>
+            <span className="text-accenture-purple">{'>'}</span>
             ENTED
           </h1>
         </div>
