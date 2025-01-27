@@ -32,53 +32,20 @@ const Hero = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="col-span-1"
-          >
-            <div className="aspect-square bg-white p-6 rounded-lg">
-              <span className="text-sm text-gray-600 uppercase">Research Report</span>
-              <h3 className="text-xl font-bold mt-2">Technology Vision 2025</h3>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="col-span-1"
-          >
-            <div className="aspect-square bg-accenture-purple/20 p-6 rounded-lg">
-              <span className="text-sm text-white uppercase">Research Report</span>
-              <h3 className="text-xl font-bold text-white mt-2">Accenture Life Trends 2025</h3>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="col-span-1"
-          >
-            <div className="aspect-square bg-accenture-purple/40 p-6 rounded-lg">
-              <span className="text-sm text-white uppercase">Research Report</span>
-              <h3 className="text-xl font-bold text-white mt-2">Pulse of Change: January 2025</h3>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="col-span-1"
-          >
-            <div className="aspect-square bg-white p-6 rounded-lg">
-              <span className="text-sm text-gray-600 uppercase">Event</span>
-              <h3 className="text-xl font-bold mt-2">World Economic Forum (WEF) at Davos 2025</h3>
-            </div>
-          </motion.div>
+          {[0, 1, 2, 3].map((index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 * (index + 1) }}
+              className="col-span-1"
+            >
+              <div className="aspect-square bg-white p-6 rounded-lg">
+                <span className="text-sm text-gray-600 uppercase">Research Report</span>
+                <h3 className="text-xl font-bold mt-2">{index === 0 ? "Technology Vision 2025" : index === 1 ? "Accenture Life Trends 2025" : index === 2 ? "Pulse of Change: January 2025" : "World Economic Forum (WEF) at Davos 2025"}</h3>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

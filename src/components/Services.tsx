@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const Services = () => {
   const services = [
     {
@@ -25,15 +27,26 @@ const Services = () => {
   return (
     <section className="bg-accenture-dark text-white py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-4">
-          Empower Your Business
-        </h2>
-        <p className="text-xl mb-12 text-gray-300">Access world-class products, services, and solutions.</p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-bold mb-4">
+            Empower Your Business
+          </h2>
+          <p className="text-xl mb-12 text-gray-300">Access world-class products, services, and solutions.</p>
+        </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {services.map((service, index) => (
-            <div 
-              key={index} 
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
               className="bg-accenture-darker p-6 rounded-lg h-full flex flex-col justify-between group hover:bg-opacity-80 transition-all border border-accenture-purple/20"
             >
               <div>
@@ -45,7 +58,7 @@ const Services = () => {
                   Learn More
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
