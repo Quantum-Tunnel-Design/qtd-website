@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import WhatWeThink from "./pages/WhatWeThink";
 
 const queryClient = new QueryClient();
 
@@ -14,6 +15,7 @@ const App = () => {
         <TooltipProvider>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/what-we-think" element={<WhatWeThink />} />
           </Routes>
           <Toaster />
           <Sonner />

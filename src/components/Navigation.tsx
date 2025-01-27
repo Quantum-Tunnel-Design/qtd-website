@@ -48,7 +48,7 @@ const Navigation = () => {
                 What we do <ChevronDown className="ml-1 h-4 w-4" />
               </button>
             </div>
-            <a href="#" className="text-white hover:text-accenture-purple transition-colors">
+            <a href="/what-we-think" className="text-white hover:text-accenture-purple transition-colors">
               What we think
             </a>
             <a href="#" className="text-white hover:text-accenture-purple transition-colors">
