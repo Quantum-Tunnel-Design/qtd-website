@@ -55,9 +55,9 @@ const Navigation = () => {
             <Link to="/who-we-are" className="text-white hover:text-accenture-purple transition-colors">
               Who we are
             </Link>
-            <a href="#" className="text-white hover:text-accenture-purple transition-colors">
+            <Link to="/careers" className="text-white hover:text-accenture-purple transition-colors">
               Careers
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
