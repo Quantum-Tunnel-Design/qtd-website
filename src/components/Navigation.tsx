@@ -99,6 +99,9 @@ const Navigation = () => {
             <Link to="/who-we-are" className="text-white hover:text-accenture-purple transition-colors">
               Who we are
             </Link>
+            <Link to="/futurism" className="text-white hover:text-accenture-purple transition-colors">
+              Futurism
+            </Link>
             <Link to="/careers" className="text-white hover:text-accenture-purple transition-colors">
               Careers
             </Link>

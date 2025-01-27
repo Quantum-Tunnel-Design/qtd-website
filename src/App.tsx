@@ -8,6 +8,7 @@ import WhatWeThink from "./pages/WhatWeThink";
 import WhoWeAre from "./pages/WhoWeAre";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
+import Futurism from "./pages/Futurism";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,14 @@ const App = () => {
             element={
               <TooltipProvider>
                 <Contact />
+              </TooltipProvider>
+            } 
+          />
+          <Route 
+            path="/futurism" 
+            element={
+              <TooltipProvider>
+                <Futurism />
               </TooltipProvider>
             } 
           />
