@@ -117,18 +117,25 @@ const Careers = () => {
       <Navigation />
       
       {/* Hero Section with Why Join Us */}
-      <div className="bg-accenture-dark text-white py-20">
+      <div className="relative min-h-[60vh] bg-accenture-dark pt-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-6">Join Our Team</h1>
-          <p className="text-xl max-w-2xl">
-            Be part of a team that's driving innovation and making a difference in
-            the world.
-          </p>
+          <div className="py-20">
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-8">
+              JOIN OUR
+              <br />
+              TEAM<span className="text-accenture-purple">{'>'}</span>
+            </h1>
+            
+            <p className="text-white text-xl md:text-2xl mb-8 max-w-3xl">
+              Be part of a team that's driving innovation and making a difference in
+              the world.
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Benefits Section */}
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-4 text-accenture-dark">
             The Accenture Advantage
@@ -136,7 +143,7 @@ const Careers = () => {
           <p className="text-xl mb-12 text-gray-600">
             Discover the benefits of building your career with us.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="p-6 bg-white shadow-lg">
                 <div className="mb-6">{benefit.icon}</div>
@@ -160,7 +167,7 @@ const Careers = () => {
           <Carousel className="w-full">
             <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/4">
+                <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/4">
                   <div className="bg-white p-8 rounded shadow-lg h-full">
                     <div className="flex flex-col items-center text-center">
                       <div className="w-32 h-32 mb-6 rounded-full overflow-hidden">

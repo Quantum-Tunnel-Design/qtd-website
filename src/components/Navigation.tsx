@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isThinkOpen, setIsThinkOpen] = useState(false);
 
   const capabilities = [
     "Cloud",
@@ -32,6 +33,15 @@ const Navigation = () => {
     "Industrial",
   ];
 
+  const thinkingTopics = [
+    "Overview",
+    "Industry thinking",
+    "Deloitte Insights",
+    "Climate",
+    "Digital",
+    "Work"
+  ];
+
   return (
     <nav className="fixed top-0 w-full bg-accenture-dark/95 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4">
@@ -43,15 +53,26 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-8">
             <div className="relative group">
               <button
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  setIsThinkOpen(false);
+                }}
                 className="flex items-center text-white hover:text-accenture-purple transition-colors"
               >
                 What we do <ChevronDown className="ml-1 h-4 w-4" />
               </button>
             </div>
-            <Link to="/what-we-think" className="text-white hover:text-accenture-purple transition-colors">
-              What we think
-            </Link>
+            <div className="relative group">
+              <button
+                onClick={() => {
+                  setIsThinkOpen(!isThinkOpen);
+                  setIsOpen(false);
+                }}
+                className="flex items-center text-white hover:text-accenture-purple transition-colors"
+              >
+                What we think <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+            </div>
             <Link to="/who-we-are" className="text-white hover:text-accenture-purple transition-colors">
               Who we are
             </Link>
@@ -89,9 +110,12 @@ const Navigation = () => {
                   <ul className="space-y-3">
                     {capabilities.map((item) => (
                       <li key={item}>
-                        <a href="#" className="hover:text-accenture-purple transition-colors">
+                        <Link 
+                          to={item === "Cloud" ? "/what-we-think" : "#"} 
+                          className="hover:text-accenture-purple transition-colors"
+                        >
                           {item}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -104,6 +128,35 @@ const Navigation = () => {
                         <a href="#" className="hover:text-accenture-purple transition-colors">
                           {item}
                         </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {isThinkOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-full left-0 w-full bg-accenture-darker text-white overflow-hidden"
+          >
+            <div className="container mx-auto px-4 py-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                  <ul className="space-y-6">
+                    {thinkingTopics.map((item) => (
+                      <li key={item}>
+                        <Link 
+                          to="#" 
+                          className="text-xl hover:text-accenture-purple transition-colors"
+                        >
+                          {item}
+                        </Link>
                       </li>
                     ))}
                   </ul>
