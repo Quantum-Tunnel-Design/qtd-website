@@ -23,28 +23,26 @@ const Services = () => {
   ];
 
   return (
-    <section className="bg-[#4B0082] text-white py-20">
+    <section className="bg-accenture-dark text-white py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-4">
-          Empower Your Business with Access to World-Class Products, Services, and Solutions
+          Empower Your Business
         </h2>
-        <p className="text-xl mb-12">We cover your connected IT ecosystem.</p>
+        <p className="text-xl mb-12 text-gray-300">Access world-class products, services, and solutions.</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="bg-[#1A1F2C] p-6 rounded-lg h-full flex flex-col justify-between group hover:bg-[#2A2F3C] transition-colors"
+              className="bg-accenture-darker p-6 rounded-lg h-full flex flex-col justify-between group hover:bg-opacity-80 transition-all border border-accenture-purple/20"
             >
               <div>
-                <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                <h3 className="text-xl font-semibold mb-4 text-accenture-purple">{service.title}</h3>
                 <p className="text-gray-300">{service.description}</p>
               </div>
               <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="bg-white/10 p-2 rounded-full">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                <button className="bg-accenture-purple/10 p-2 rounded-lg w-full hover:bg-accenture-purple/20 transition-colors">
+                  Learn More
                 </button>
               </div>
             </div>
