@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import { ArrowRight, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const WhoWeAre = () => {
   return (
@@ -11,14 +13,85 @@ const WhoWeAre = () => {
         <div className="max-w-7xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-12">Our Leadership</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl">
-            Accenture is led globally by our managing partner; our elected board of directors,
-            known as the Shareholders Council; our global leadership team, known as the
-            Enablement Team; and the leaders of our offices and practices.
+            Meet the visionaries behind our success. Our leadership team brings together decades of experience
+            and a shared commitment to innovation and excellence.
           </p>
         </div>
       </section>
 
-      {/* Leadership Categories */}
+      {/* Leadership Profiles */}
+      <section className="px-4 md:px-8 py-16 bg-accenture-darker">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* CEO Profile */}
+          <Card className="bg-transparent border-accenture-purple">
+            <CardHeader className="space-y-4">
+              <div className="flex items-center space-x-4">
+                <Avatar className="h-20 w-20">
+                  <AvatarImage src="/placeholder.svg" alt="CEO" />
+                  <AvatarFallback>CEO</AvatarFallback>
+                </Avatar>
+                <div>
+                  <CardTitle className="text-2xl text-white">John Smith</CardTitle>
+                  <CardDescription className="text-accenture-purple">Co-Founder & CEO</CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-gray-300">
+                With over 15 years of experience in technology and innovation,
+                John leads our company's strategic vision and growth initiatives.
+                His expertise in digital transformation has been instrumental in
+                shaping our success.
+              </p>
+              <div className="flex items-center space-x-4">
+                <a 
+                  href="https://linkedin.com/in/john-smith" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-accenture-purple hover:text-accenture-light transition-colors"
+                >
+                  <Linkedin className="w-6 h-6" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Legal Director Profile */}
+          <Card className="bg-transparent border-accenture-purple">
+            <CardHeader className="space-y-4">
+              <div className="flex items-center space-x-4">
+                <Avatar className="h-20 w-20">
+                  <AvatarImage src="/placeholder.svg" alt="Legal Director" />
+                  <AvatarFallback>LD</AvatarFallback>
+                </Avatar>
+                <div>
+                  <CardTitle className="text-2xl text-white">Sarah Johnson</CardTitle>
+                  <CardDescription className="text-accenture-purple">Co-Founder & Director Legal</CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-gray-300">
+                Sarah brings extensive legal expertise with a focus on technology law
+                and compliance. Her leadership ensures our operations maintain the
+                highest standards of legal and ethical compliance while supporting
+                our innovative approach.
+              </p>
+              <div className="flex items-center space-x-4">
+                <a 
+                  href="https://linkedin.com/in/sarah-johnson" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-accenture-purple hover:text-accenture-light transition-colors"
+                >
+                  <Linkedin className="w-6 h-6" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section className="px-4 md:px-8 py-16 bg-accenture-darker">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Shareholders Council */}
@@ -91,7 +164,6 @@ const WhoWeAre = () => {
           </div>
         </div>
       </section>
-
       {/* Purpose and Mission Section */}
       <section className="px-4 md:px-8 py-16">
         <div className="max-w-7xl mx-auto space-y-16">
@@ -110,7 +182,6 @@ const WhoWeAre = () => {
           </div>
         </div>
       </section>
-
       {/* Values Section */}
       <section className="px-4 md:px-8 py-16 bg-accenture-darker">
         <div className="max-w-7xl mx-auto space-y-8">
@@ -139,7 +210,6 @@ const WhoWeAre = () => {
           </div>
         </div>
       </section>
-
       {/* Social Links */}
       <section className="px-4 md:px-8 py-8">
         <div className="max-w-7xl mx-auto flex justify-center space-x-6">
