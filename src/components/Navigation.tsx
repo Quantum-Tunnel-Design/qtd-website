@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { ChevronDown, Search, Globe } from "lucide-react";
+import { ChevronDown, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isThinkOpen, setIsThinkOpen] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState("Sri Lanka");
+  const [isCountryOpen, setIsCountryOpen] = useState(false);
+  const { toast } = useToast();
 
   const capabilities = [
     "Cloud",
@@ -41,6 +45,22 @@ const Navigation = () => {
     "Digital",
     "Work"
   ];
+
+  const countries = ["Sri Lanka", "USA", "Europe"];
+
+  const handleCountryChange = (country: string) => {
+    if (country !== "Sri Lanka") {
+      setSelectedCountry("Sri Lanka");
+      toast({
+        title: "Notice",
+        description: "Except Sri Lanka, we are currently setting up our office bases.",
+        duration: 5000,
+      });
+    } else {
+      setSelectedCountry(country);
+    }
+    setIsCountryOpen(false);
+  };
 
   return (
     <nav className="fixed top-0 w-full bg-accenture-dark/95 backdrop-blur-sm z-50">
@@ -82,14 +102,29 @@ const Navigation = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
-            <button className="text-white hover:text-accenture-purple transition-colors">
-              <Search className="w-5 h-5" />
-            </button>
-            <button className="text-white hover:text-accenture-purple transition-colors flex items-center space-x-2">
-              <Globe className="w-5 h-5" />
-              <span>USA</span>
-              <ChevronDown className="h-4 w-4" />
-            </button>
+            <div className="relative">
+              <button 
+                onClick={() => setIsCountryOpen(!isCountryOpen)}
+                className="text-white hover:text-accenture-purple transition-colors flex items-center space-x-2"
+              >
+                <Globe className="w-5 h-5" />
+                <span>{selectedCountry}</span>
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              {isCountryOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
+                  {countries.map((country) => (
+                    <button
+                      key={country}
+                      onClick={() => handleCountryChange(country)}
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      {country}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
