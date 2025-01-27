@@ -45,12 +45,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        accenture: {
-          purple: "#9b87f5",
-          dark: "#1A1F2C",
-          darker: "#0A0F1C",
-          light: "#D6BCFA",
+        brand: {
+          darkPurple: "#110920",
+          russianViolet: "#251448",
+          royalBlue: "#2E62DC",
+          powderBlue: "#B4CDED",
+          white: "#FFFFFF",
         },
+      },
+      borderRadius: {
+        lg: "0",
+        md: "0",
+        sm: "0",
       },
       keyframes: {
         "fade-up": {
