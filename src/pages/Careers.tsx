@@ -1,11 +1,12 @@
 import React from "react";
-import { Book, TrendingUp, Scale, Calendar, Award } from "lucide-react";
+import { Book, TrendingUp, Scale } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Navigation from "@/components/Navigation";
 
 const Careers = () => {
   const testimonials = [
@@ -13,19 +14,19 @@ const Careers = () => {
       name: "Latanya Little",
       role: "QA Lead",
       quote: "Every day brings a brand-new opportunity for me here at Accenture.",
-      image: "/lovable-uploads/fe90b08d-c964-488d-a969-d474d2c6ab4c.png",
+      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
     },
     {
       name: "Angel De Avila",
       role: "DA Competency Manager",
       quote: "I have met wonderful people that make Accenture a great workplace.",
-      image: "/lovable-uploads/fe90b08d-c964-488d-a969-d474d2c6ab4c.png",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
     },
     {
       name: "Paulina Ramo Garcia",
       role: "Sr. Recruiter, Accenture Mexico",
       quote: "In Accenture, I've enjoyed sharing and learning everyday from leaders and teammates across the world.",
-      image: "/lovable-uploads/fe90b08d-c964-488d-a969-d474d2c6ab4c.png",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
     },
   ];
 
@@ -88,8 +89,10 @@ const Careers = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
+      
       {/* Hero Section */}
-      <div className="bg-accenture-dark text-white py-20">
+      <div className="bg-accenture-dark text-white py-20 mt-20">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl font-bold mb-6">Join Our Team</h1>
           <p className="text-xl max-w-2xl">
@@ -107,8 +110,7 @@ const Careers = () => {
           </h2>
           <p className="text-xl mb-12 text-gray-600">
             Discover the Accenture journey through the eyes of our exceptional
-            team, sharing brief yet impactful tales of growth, innovation, and
-            success.
+            team.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
