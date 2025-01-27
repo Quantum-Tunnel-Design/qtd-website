@@ -14,16 +14,42 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <TooltipProvider>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/what-we-think" element={<WhatWeThink />} />
-            <Route path="/who-we-are" element={<WhoWeAre />} />
-            <Route path="/careers" element={<Careers />} />
-          </Routes>
-          <Toaster />
-          <Sonner />
-        </TooltipProvider>
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <TooltipProvider>
+                <Index />
+              </TooltipProvider>
+            } 
+          />
+          <Route 
+            path="/what-we-think" 
+            element={
+              <TooltipProvider>
+                <WhatWeThink />
+              </TooltipProvider>
+            } 
+          />
+          <Route 
+            path="/who-we-are" 
+            element={
+              <TooltipProvider>
+                <WhoWeAre />
+              </TooltipProvider>
+            } 
+          />
+          <Route 
+            path="/careers" 
+            element={
+              <TooltipProvider>
+                <Careers />
+              </TooltipProvider>
+            } 
+          />
+        </Routes>
+        <Toaster />
+        <Sonner />
       </BrowserRouter>
     </QueryClientProvider>
   );
