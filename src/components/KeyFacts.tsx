@@ -13,9 +13,8 @@ const KeyFacts = () => {
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
           className="text-4xl font-bold mb-16 text-left"
         >
           Key Facts
@@ -25,9 +24,8 @@ const KeyFacts = () => {
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               className="bg-accenture-darker p-8 rounded-lg hover:bg-opacity-80 transition-all"
             >
               <div className="text-5xl font-bold mb-4 text-accenture-purple">{fact.number}</div>

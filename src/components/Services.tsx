@@ -29,9 +29,8 @@ const Services = () => {
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
         >
           <h2 className="text-4xl font-bold mb-4">
             Empower Your Business
@@ -44,9 +43,8 @@ const Services = () => {
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               className="bg-accenture-darker p-6 rounded-lg h-full flex flex-col justify-between group hover:bg-opacity-80 transition-all border border-accenture-purple/20"
             >
               <div>
