@@ -7,7 +7,6 @@ import Index from "./pages/Index";
 import WhatWeThink from "./pages/WhatWeThink";
 import WhoWeAre from "./pages/WhoWeAre";
 import Careers from "./pages/Careers";
-import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -45,14 +44,6 @@ const App = () => {
             element={
               <TooltipProvider>
                 <Careers />
-              </TooltipProvider>
-            } 
-          />
-          <Route 
-            path="/contact" 
-            element={
-              <TooltipProvider>
-                <Contact />
               </TooltipProvider>
             } 
           />

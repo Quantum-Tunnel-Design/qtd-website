@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
 const Navigation = () => {
@@ -10,7 +10,6 @@ const Navigation = () => {
   const [selectedCountry, setSelectedCountry] = useState("Sri Lanka");
   const [isCountryOpen, setIsCountryOpen] = useState(false);
   const { toast } = useToast();
-  const location = useLocation();
 
   const capabilities = [
     "Cloud",
@@ -64,29 +63,21 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-brand-darkPurple/95 backdrop-blur-sm z-50">
+    <nav className="fixed top-0 w-full bg-accenture-dark/95 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="text-brand-royalBlue text-4xl font-bold">{'>'}</Link>
+            <Link to="/" className="text-accenture-purple text-4xl font-bold">{'>'}</Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <Link 
-              to="/" 
-              className={`text-brand-white hover:text-brand-royalBlue transition-colors ${
-                location.pathname === "/" ? "text-brand-royalBlue" : ""
-              }`}
-            >
-              Home
-            </Link>
             <div className="relative group">
               <button
                 onClick={() => {
                   setIsOpen(!isOpen);
                   setIsThinkOpen(false);
                 }}
-                className="flex items-center text-brand-white hover:text-brand-royalBlue transition-colors"
+                className="flex items-center text-white hover:text-accenture-purple transition-colors"
               >
                 What we do <ChevronDown className="ml-1 h-4 w-4" />
               </button>
@@ -97,34 +88,16 @@ const Navigation = () => {
                   setIsThinkOpen(!isThinkOpen);
                   setIsOpen(false);
                 }}
-                className="flex items-center text-brand-white hover:text-brand-royalBlue transition-colors"
+                className="flex items-center text-white hover:text-accenture-purple transition-colors"
               >
                 What we think <ChevronDown className="ml-1 h-4 w-4" />
               </button>
             </div>
-            <Link 
-              to="/who-we-are" 
-              className={`text-brand-white hover:text-brand-royalBlue transition-colors ${
-                location.pathname === "/who-we-are" ? "text-brand-royalBlue" : ""
-              }`}
-            >
+            <Link to="/who-we-are" className="text-white hover:text-accenture-purple transition-colors">
               Who we are
             </Link>
-            <Link 
-              to="/careers" 
-              className={`text-brand-white hover:text-brand-royalBlue transition-colors ${
-                location.pathname === "/careers" ? "text-brand-royalBlue" : ""
-              }`}
-            >
+            <Link to="/careers" className="text-white hover:text-accenture-purple transition-colors">
               Careers
-            </Link>
-            <Link 
-              to="/contact" 
-              className={`text-brand-white hover:text-brand-royalBlue transition-colors ${
-                location.pathname === "/contact" ? "text-brand-royalBlue" : ""
-              }`}
-            >
-              Contact
             </Link>
           </div>
 
@@ -132,19 +105,19 @@ const Navigation = () => {
             <div className="relative">
               <button 
                 onClick={() => setIsCountryOpen(!isCountryOpen)}
-                className="text-brand-white hover:text-brand-royalBlue transition-colors flex items-center space-x-2"
+                className="text-white hover:text-accenture-purple transition-colors flex items-center space-x-2"
               >
                 <Globe className="w-5 h-5" />
                 <span>{selectedCountry}</span>
                 <ChevronDown className="h-4 w-4" />
               </button>
               {isCountryOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-brand-russianViolet rounded-none shadow-lg py-1">
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
                   {countries.map((country) => (
                     <button
                       key={country}
                       onClick={() => handleCountryChange(country)}
-                      className="block w-full text-left px-4 py-2 text-sm text-brand-white hover:bg-brand-darkPurple"
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       {country}
                     </button>

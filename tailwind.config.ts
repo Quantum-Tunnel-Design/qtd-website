@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ['Georgia', 'Times New Roman', 'serif'],
+        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         background: "hsl(var(--background))",
@@ -45,17 +49,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        brand: {
-          darkPurple: "#110920",    // Primary
-          russianViolet: "#251448", // Secondary
-          royalBlue: "#2E62DC",     // Tertiary
-          white: "#FFFFFF",         // White
+        accenture: {
+          purple: "#9b87f5",
+          dark: "#1A1F2C",
+          darker: "#0A0F1C",
+          light: "#D6BCFA",
         },
-      },
-      borderRadius: {
-        lg: "0",
-        md: "0",
-        sm: "0",
       },
       keyframes: {
         "fade-up": {
