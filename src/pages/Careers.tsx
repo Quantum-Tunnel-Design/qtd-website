@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Book, TrendingUp, Scale, Heart, Users, Globe } from "lucide-react";
 import {
   Accordion,
@@ -120,7 +121,12 @@ const Careers = () => {
       {/* Hero Section with Why Join Us */}
       <div className="relative min-h-[60vh] bg-accenture-dark pt-20">
         <div className="container mx-auto px-4">
-          <div className="py-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="py-20"
+          >
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-8">
               JOIN OUR
               <br />
@@ -131,30 +137,55 @@ const Careers = () => {
               Be part of a team that's driving innovation and making a difference in
               the world.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="py-20 bg-white"
+      >
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4 text-accenture-dark">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold mb-4 text-accenture-dark"
+          >
             The Accenture Advantage
-          </h2>
-          <p className="text-xl mb-12 text-gray-600">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl mb-12 text-gray-600"
+          >
             Discover the benefits of building your career with us.
-          </p>
+          </motion.p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="p-6 bg-white shadow-lg">
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 bg-white shadow-lg"
+              >
                 <div className="mb-6">{benefit.icon}</div>
                 <h3 className="text-2xl font-bold mb-4">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Employee Testimonials */}
       <section className="py-20 bg-gray-50">
@@ -235,6 +266,7 @@ const Careers = () => {
           </Accordion>
         </div>
       </section>
+
       <Footer />
     </div>
   );
