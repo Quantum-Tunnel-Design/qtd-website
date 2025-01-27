@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import { ArrowRight, Linkedin } from "lucide-react";
+import { ArrowRight, Linkedin, Twitter, Facebook } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
