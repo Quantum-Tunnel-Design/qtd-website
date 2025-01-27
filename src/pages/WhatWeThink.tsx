@@ -86,6 +86,48 @@ const WhatWeThink = () => {
         </div>
       </section>
 
+      {/* Service Description Section */}
+      <section className="py-16 px-4 md:px-8 bg-accenture-dark border-y border-accenture-purple/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Transforming Industries Through Innovation</h2>
+              <p className="text-lg text-gray-300 mb-8">
+                At Accenture, we combine deep industry expertise with advanced technology 
+                to drive meaningful change. Our approach integrates strategy, technology, 
+                and operations to deliver exceptional results for our clients.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <p className="text-2xl font-bold text-accenture-purple mb-2">500+</p>
+                  <p className="text-sm text-gray-300">Global clients served</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-accenture-purple mb-2">95%</p>
+                  <p className="text-sm text-gray-300">Client satisfaction rate</p>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <div className="border-l-2 border-accenture-purple pl-6">
+                <h3 className="text-xl font-semibold mb-3">Strategic Consulting</h3>
+                <p className="text-gray-300">
+                  Helping organizations navigate digital transformation with confidence through 
+                  our proven methodologies and industry expertise.
+                </p>
+              </div>
+              <div className="border-l-2 border-accenture-purple pl-6">
+                <h3 className="text-xl font-semibold mb-3">Technology Innovation</h3>
+                <p className="text-gray-300">
+                  Leveraging cutting-edge technologies to build scalable solutions that 
+                  drive business growth and operational efficiency.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Approach Section */}
       <section className="py-16 px-4 md:px-8 bg-accenture-dark">
         <div className="max-w-6xl mx-auto">
