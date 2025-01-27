@@ -79,15 +79,31 @@ const WhatWeThink = () => {
       <section className="relative pt-32 pb-16 px-4 md:px-8 overflow-hidden">
         {/* Animated Gradient Mesh Background */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(155,135,245,0.1),rgba(26,31,44,0.6))]" />
-          <div className="absolute inset-0 animate-[wave_8s_ease-in-out_infinite] opacity-40"
+          <div className="absolute inset-0 bg-gradient-to-br from-accenture-darker via-accenture-dark to-accenture-darker" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(155,135,245,0.15),rgba(26,31,44,0.8))]" />
+          <div 
+            className="absolute inset-0 animate-wave opacity-50"
             style={{
               background: `
-                radial-gradient(circle at 0% 0%, transparent 0%, rgba(155,135,245,0.3) 100%),
-                radial-gradient(circle at 100% 0%, transparent 0%, rgba(214,188,250,0.2) 100%),
-                radial-gradient(circle at 100% 100%, transparent 0%, rgba(155,135,245,0.3) 100%),
-                radial-gradient(circle at 0% 100%, transparent 0%, rgba(214,188,250,0.2) 100%)
-              `
+                radial-gradient(circle at 20% 20%, rgba(155,135,245,0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(214,188,250,0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(155,135,245,0.4) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(214,188,250,0.4) 0%, transparent 50%)
+              `,
+              filter: 'blur(40px)',
+            }}
+          />
+          <div 
+            className="absolute inset-0 animate-wave opacity-30"
+            style={{
+              animationDelay: '-4s',
+              background: `
+                radial-gradient(circle at 0% 0%, rgba(155,135,245,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 100% 0%, rgba(214,188,250,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(155,135,245,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 0% 100%, rgba(214,188,250,0.3) 0%, transparent 50%)
+              `,
+              filter: 'blur(30px)',
             }}
           />
         </div>
