@@ -52,6 +52,12 @@ export default {
           light: "#D6BCFA",
         },
       },
+      borderRadius: {
+        lg: "0",
+        md: "0",
+        sm: "0",
+        DEFAULT: "0",
+      },
       keyframes: {
         "fade-up": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
