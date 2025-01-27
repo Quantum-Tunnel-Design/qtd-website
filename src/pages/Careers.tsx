@@ -117,7 +117,7 @@ const Careers = () => {
       <Navigation />
       
       {/* Hero Section with Why Join Us */}
-      <div className="bg-accenture-dark text-white py-20 mt-20">
+      <div className="bg-accenture-dark text-white py-20 mt-[80px]">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl font-bold mb-6">Join Our Team</h1>
           <p className="text-xl max-w-2xl">
