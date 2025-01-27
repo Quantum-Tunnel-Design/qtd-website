@@ -1,13 +1,14 @@
 import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Futurism = () => {
   const blogs = [
     {
       id: 1,
-      title: "AI for IT modernization: Faster, cheaper, better",
-      image: "/lovable-uploads/84d8f547-6f76-443a-82ca-fe47b0dba61d.png",
-      description: "Explore how AI is transforming IT infrastructure and operations for enhanced efficiency.",
+      title: "Scientific AI: Unlocking the next frontier of R&D productivity",
+      image: "/lovable-uploads/53152bc1-c383-44d9-812f-842b7a72cb2d.png",
+      description: "New approaches to artificial intelligence can accelerate laboratory research to drive a new era of scientific discovery and development.",
       category: "AI & Technology"
     },
     {
@@ -52,25 +53,27 @@ const Futurism = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-accenture-darker p-6 rounded-none"
+              className="bg-accenture-darker p-6"
             >
-              <img 
-                src={blog.image} 
-                alt={blog.title}
-                className="w-full h-48 object-cover mb-4 rounded-none"
-              />
-              <span className="text-sm text-accenture-purple mb-2 inline-block">
-                {blog.category}
-              </span>
-              <h3 className="text-xl font-bold text-white mb-2">
-                {blog.title}
-              </h3>
-              <p className="text-gray-300">
-                {blog.description}
-              </p>
-              <button className="mt-4 text-accenture-purple hover:text-white transition-colors">
-                Read more →
-              </button>
+              <Link to={`/blog/${blog.id}`}>
+                <img 
+                  src={blog.image} 
+                  alt={blog.title}
+                  className="w-full h-48 object-cover mb-4"
+                />
+                <span className="text-sm text-accenture-purple mb-2 inline-block">
+                  {blog.category}
+                </span>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {blog.title}
+                </h3>
+                <p className="text-gray-300">
+                  {blog.description}
+                </p>
+                <button className="mt-4 text-accenture-purple hover:text-white transition-colors">
+                  Read more →
+                </button>
+              </Link>
             </motion.div>
           ))}
         </div>

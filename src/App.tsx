@@ -9,6 +9,7 @@ import WhoWeAre from "./pages/WhoWeAre";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Futurism from "./pages/Futurism";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +63,14 @@ const App = () => {
             element={
               <TooltipProvider>
                 <Futurism />
+              </TooltipProvider>
+            } 
+          />
+          <Route 
+            path="/blog/:id" 
+            element={
+              <TooltipProvider>
+                <BlogPost />
               </TooltipProvider>
             } 
           />
