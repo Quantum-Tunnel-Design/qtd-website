@@ -57,9 +57,14 @@ export default {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        "wave": {
+          "0%, 100%": { transform: "translateY(0) scale(1)" },
+          "50%": { transform: "translateY(-1%) scale(1.01)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.5s ease-out forwards",
+        "wave": "wave 8s ease-in-out infinite",
       },
     },
   },

@@ -75,9 +75,24 @@ const WhatWeThink = () => {
     <div className="min-h-screen bg-accenture-darker text-white">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 md:px-8">
-        <div className="max-w-6xl mx-auto">
+      {/* Hero Section with Animated Gradient Mesh */}
+      <section className="relative pt-32 pb-16 px-4 md:px-8 overflow-hidden">
+        {/* Animated Gradient Mesh Background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(155,135,245,0.1),rgba(26,31,44,0.6))]" />
+          <div className="absolute inset-0 animate-[wave_8s_ease-in-out_infinite] opacity-40"
+            style={{
+              background: `
+                radial-gradient(circle at 0% 0%, transparent 0%, rgba(155,135,245,0.3) 100%),
+                radial-gradient(circle at 100% 0%, transparent 0%, rgba(214,188,250,0.2) 100%),
+                radial-gradient(circle at 100% 100%, transparent 0%, rgba(155,135,245,0.3) 100%),
+                radial-gradient(circle at 0% 100%, transparent 0%, rgba(214,188,250,0.2) 100%)
+              `
+            }}
+          />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Creating value beyond the hype</h1>
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl">
             We're a global team of business & digital technology leaders helping clients unlock value through innovation.
