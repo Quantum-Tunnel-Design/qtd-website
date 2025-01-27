@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Brain, Globe, Users, Lightbulb } from "lucide-react";
+import { Brain, Globe, Users, Lightbulb, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 
 const WhatWeThink = () => {
@@ -47,6 +47,30 @@ const WhatWeThink = () => {
     }
   ];
 
+  const stats = [
+    {
+      number: "2x",
+      description: "faster delivery of digital solutions with our agile methodology",
+      subtext: "for companies implementing our digital transformation framework"
+    },
+    {
+      number: "4.1x",
+      description: "more likely to succeed",
+      subtext: "when organizations adopt our comprehensive change management approach"
+    }
+  ];
+
+  const caseStudies = [
+    {
+      title: "Digital Transformation Success",
+      description: "A global financial services provider transformed their legacy systems through our comprehensive digital strategy. Within 18 months, they achieved 40% improvement in operational efficiency and enhanced customer satisfaction scores by 60%."
+    },
+    {
+      title: "Innovation at Scale",
+      description: "Working with a leading healthcare provider, we implemented AI-driven solutions that revolutionized patient care delivery. The result was a 30% reduction in wait times and a 45% improvement in resource allocation."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-accenture-darker text-white">
       <Navigation />
@@ -62,10 +86,10 @@ const WhatWeThink = () => {
         </div>
       </section>
 
-      {/* Offerings Grid */}
+      {/* Our Approach Section */}
       <section className="py-16 px-4 md:px-8 bg-accenture-dark">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Service Offerings</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Approach</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {offerings.map((offering, index) => (
               <Card key={index} className="bg-accenture-darker border-accenture-purple/20 rounded-none p-6">
@@ -83,6 +107,39 @@ const WhatWeThink = () => {
                   </ul>
                 </div>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Stats Section */}
+      <section className="py-16 px-4 md:px-8 bg-accenture-darker border-y border-accenture-purple/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center md:text-left">
+                <h3 className="text-5xl md:text-7xl font-bold text-accenture-purple mb-4">{stat.number}</h3>
+                <p className="text-xl md:text-2xl mb-2">{stat.description}</p>
+                <p className="text-gray-400">{stat.subtext}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-16 px-4 md:px-8 bg-accenture-dark">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12">Examples of Our Work</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {caseStudies.map((study, index) => (
+              <div key={index} className="border-l-2 border-accenture-purple pl-6">
+                <h3 className="text-2xl font-semibold mb-4">{study.title}</h3>
+                <p className="text-gray-300 mb-6">{study.description}</p>
+                <Button variant="link" className="text-accenture-purple p-0 hover:text-accenture-purple/90">
+                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
             ))}
           </div>
         </div>
