@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, Search, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <a href="/" className="text-accenture-purple text-4xl font-bold">{'>'}</a>
+            <Link to="/" className="text-accenture-purple text-4xl font-bold">{'>'}</Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -48,12 +49,12 @@ const Navigation = () => {
                 What we do <ChevronDown className="ml-1 h-4 w-4" />
               </button>
             </div>
-            <a href="/what-we-think" className="text-white hover:text-accenture-purple transition-colors">
+            <Link to="/what-we-think" className="text-white hover:text-accenture-purple transition-colors">
               What we think
-            </a>
-            <a href="#" className="text-white hover:text-accenture-purple transition-colors">
+            </Link>
+            <Link to="/who-we-are" className="text-white hover:text-accenture-purple transition-colors">
               Who we are
-            </a>
+            </Link>
             <a href="#" className="text-white hover:text-accenture-purple transition-colors">
               Careers
             </a>
