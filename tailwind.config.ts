@@ -46,11 +46,10 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         brand: {
-          darkPurple: "#110920",
-          russianViolet: "#251448",
-          royalBlue: "#2E62DC",
-          powderBlue: "#B4CDED",
-          white: "#FFFFFF",
+          darkPurple: "#110920",    // Primary
+          russianViolet: "#251448", // Secondary
+          royalBlue: "#2E62DC",     // Tertiary
+          white: "#FFFFFF",         // White
         },
       },
       borderRadius: {
